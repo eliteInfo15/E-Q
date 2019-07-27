@@ -15,13 +15,13 @@ from treatmentDetails import TreatmentDetails,eng
 def add_tdet():
     try:
         if request.method=='POST':
-            id=request.form['sid']
+            sid=request.form['sid']
             tid = request.form['tid']
             duration = request.form['duration']
             price = request.form['price']
             Session = sessionmaker(bind=eng)
             ses = Session()
-            su = TreatmentDetails(sid,tid,duration,price )
+            su = TreatmentDetails(sid,tid,duration,price)
             ses.add_all([su])
             ses.commit()
             response={'status':1,"statusMessage":"Data Inserted"}

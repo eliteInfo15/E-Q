@@ -15,8 +15,7 @@ class Employee(Base):
 	experience=Column(String(30))
 	sid=Column(Integer,ForeignKey('Salon.sid'))
 	tid=Column(Integer,ForeignKey('Treatment.tid'))
-	def __init__(self,eid,ename,ephone,photo,experience,sid,tid):
-		self.eid=eid
+	def __init__(self,ename,ephone,photo,experience,sid,tid):
 		self.ename=ename
 		self.ephone=ephone
 		self.photo=photo

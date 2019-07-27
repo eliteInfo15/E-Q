@@ -13,8 +13,10 @@ class TreatmentDetails(Base):
 	tid=Column(Integer,ForeignKey('Treatment.tid'))
 	duration=Column(String(30))
 	price=Column(Integer)
-	def __init__(self,duration,price):
+	def __init__(self,duration,price,sid,tid):
 		self.duration=duration
 		self.price=price
+		self.sid=sid
+		self.tid=tid
 Base.metadata.bind = eng        
 Base.metadata.create_all()  
